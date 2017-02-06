@@ -1,0 +1,54 @@
+<form  #f="ngForm" (ngSubmit)="onSubmit(f)" >
+    <div>
+        <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text"
+                   class="form-control"
+                   id="fname"
+                   placeholder="Enter First Name" 
+                   maxlength="50"
+                   pattern="[a-zA-Z]+"
+                   required ngModel name ="fName">
+        </div>
+        <div class="form-group">
+            <label for="mname">Middle Name</label>
+            <input type="text"
+                   class="form-control"
+                   id="mname"
+                   placeholder="Enter Middle Name"
+                   pattern="[a-zA-Z]+"
+                   ngModel name = "mName">
+        </div>
+        <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text"
+                   class="form-control"
+                   id="lname"
+                   placeholder="Enter Last Name" 
+                   maxlength="50"
+                   pattern="[a-zA-Z]+"
+                   required ngModel name = "lName">
+        </div>
+        <div class="form-group">
+            <label for="number">Number</label>
+            <input type="text"
+                   class="form-control"
+                   id="number"
+                   placeholder="Enter an Indian Number"
+                   (change)="onChangeValidate($event.target.value)" 
+                   required ngModel name = "phNumber"
+                   pattern="^(\+91[\-\s]?)?[0]?(91)?\d{10}$">
+        </div>
+        <div class="form-group">
+            <label for="number">Address</label>
+            <textarea class="form-control"
+                      id="address"
+                      placeholder="Enter Address"
+                      ngModel name = "address">
+            </textarea>
+        </div>
+
+    </div>
+    <button [routerLink]="['/']" type="button" class="btn btn-primary" >Cancel</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+</form>

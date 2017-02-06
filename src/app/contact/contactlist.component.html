@@ -1,0 +1,12 @@
+<div class="row" *ngFor="let contactGet of listArray | search : searchValue ; let i=index" >
+  <a [routerLink]="['view',i]">  
+    <div class="col-xs-6" >
+      {{contactGet?.fname}}
+      {{contactGet?.mname}} 
+      {{contactGet?.lname}}</div>
+
+    <div class="col-xs-6">
+      <div class="row">{{contactGet?.phonenumber}}</div>
+    </div> 
+  </a> 
+  </div>
