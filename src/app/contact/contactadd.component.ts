@@ -30,9 +30,6 @@ onChangeValidate(f){
     this.lastName = form.value.lName;
     this.phoneNumber = form.value.phNumber;
     this.Address = form.value.address;
-    if(this.flag){
-      this.phoneNumber=0;
-    }
     this.serviceObject.pushContact(new Contact(this.firstName, this.middleName, this.lastName, this.phoneNumber, this.Address));
     //redirection
     this.router.navigate(['contactlist']);

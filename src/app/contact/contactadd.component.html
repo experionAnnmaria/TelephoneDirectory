@@ -35,7 +35,7 @@
                    class="form-control"
                    id="number"
                    placeholder="Enter an Indian Number"
-                   (change)="onChangeValidate($event.target.value)" 
+                   (keyup)="onChangeValidate($event.target.value)" 
                    required ngModel name = "phNumber"
                    pattern="^(\+91[\-\s]?)?[0]?(91)?\d{10}$">
         </div>
@@ -50,5 +50,5 @@
 
     </div>
     <button [routerLink]="['/']" type="button" class="btn btn-primary" >Cancel</button>
-    <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!f.valid || flag">Submit</button>
 </form>

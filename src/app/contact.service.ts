@@ -45,7 +45,6 @@ export class ContactService {
      onChangeValidate(ph:number){
        for (let oo of this.contactArray) {
          if ((oo.phonenumber.search(ph)) >= 0){
-           alert("Number already Exists");
            return true;
          }
        }
